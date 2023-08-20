@@ -20,7 +20,7 @@ resource "aws_codepipeline" "ecr_images" {
       output_artifacts = ["source_output"]
       configuration = {
         ConnectionArn        = aws_codestarconnections_connection.github.arn
-        FullRepositoryId     = var.repo
+        FullRepositoryId     = var.repo_front
         BranchName           = var.branch
         OutputArtifactFormat = "CODE_ZIP"
       }

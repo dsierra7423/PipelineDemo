@@ -24,7 +24,7 @@ variable "s3_bucket_state" {
 }
 
 
-variable "repo" {
+variable "repo_front" {
   description = "Github repository"
   type        = string
 }
