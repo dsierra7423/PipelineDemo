@@ -7,7 +7,7 @@ resource "aws_codebuild_project" "ecr_images" {
 
   source {
     type            = "GITHUB"
-    location        = "https://github.com/${var.repo}"
+    location        = "https://github.com/${var.repo_front}"
     git_clone_depth = 1
     buildspec       = "buildECR.yaml"
 
