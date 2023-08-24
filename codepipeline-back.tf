@@ -1,6 +1,6 @@
 
-resource "aws_codepipeline" "ecr_images" {
-  name     = "pipeline-front"
+resource "aws_codepipeline" "ecr-images-back" {
+  name     = "pipeline-back"
   role_arn = aws_iam_role.ecr_images.arn
 
   artifact_store {
@@ -20,7 +20,7 @@ resource "aws_codepipeline" "ecr_images" {
       output_artifacts = ["source_output"]
       configuration = {
         ConnectionArn        = aws_codestarconnections_connection.github.arn
-        FullRepositoryId     = var.repo_front
+        FullRepositoryId     = var.repo_back
         BranchName           = var.branch
         OutputArtifactFormat = "CODE_ZIP"
       }
@@ -41,7 +41,7 @@ resource "aws_codepipeline" "ecr_images" {
       run_order        = "1"
 
       configuration = {
-        ProjectName = aws_codebuild_project.ecr_images.name
+        ProjectName = aws_codebuild_project.ecr-images-back.name
         EnvironmentVariables = jsonencode([
           {
             name  = "AWS_DEFAULT_REGION"
@@ -56,7 +56,7 @@ resource "aws_codepipeline" "ecr_images" {
           {
             name  = "IMAGE_REPO_NAME"
             type  = "PLAINTEXT"
-            value = aws_ecr_repository.user-front.name
+            value = aws_ecr_repository.user-back.name
           },
           {
             name  = "IMAGE_TAG"

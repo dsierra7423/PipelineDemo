@@ -1,5 +1,5 @@
-resource "aws_codebuild_project" "ecr_images" {
-  name           = "build-images"
+resource "aws_codebuild_project" "ecr-images-front" {
+  name           = "build-images-front"
   description    = ""
   build_timeout  = "60"
   queued_timeout = "480"

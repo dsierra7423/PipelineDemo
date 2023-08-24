@@ -29,6 +29,11 @@ variable "repo_front" {
   type        = string
 }
 
+variable "repo_back" {
+  description = "Github repository"
+  type        = string
+}
+
 variable "branch" {
   description = "branch of the repository"
   type        = string
