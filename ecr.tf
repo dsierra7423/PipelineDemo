@@ -3,6 +3,7 @@ data "aws_ecr_authorization_token" "container_registry_token" {}
 
 resource "aws_ecr_repository" "user-front" {
     name = "user-front"
+    force_delete = true
 }
 
 resource "aws_ecr_repository_policy" "user-front" {
@@ -40,6 +41,7 @@ resource "aws_ecr_repository_policy" "user-front" {
 
 resource "aws_ecr_repository" "user-back" {
     name = "user-back"
+    force_delete = true
 }
 
 resource "aws_ecr_repository_policy" "user-back" {
