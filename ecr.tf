@@ -52,7 +52,7 @@ resource "aws_ecr_repository_policy" "user-back" {
     "Statement": [
       {
         "Effect": "Allow",
-       "Principal": {
+        "Principal": {
           "AWS": "*"
         },
         "Action": [
