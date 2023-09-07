@@ -23,6 +23,10 @@ variable "s3_bucket_state" {
   type        = string
 }
 
+variable "repo_control_access" {
+  description = "Github repository"
+  type        = string
+}
 
 variable "repo_front" {
   description = "Github repository"

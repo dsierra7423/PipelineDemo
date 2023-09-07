@@ -8,7 +8,7 @@ data "aws_dynamodb_table" "state_table" {
 #}
 
 resource "aws_iam_role" "role" {
-  name               = "codebuild-assume-role"
+  name               = "codebuild-assume-role-rasmarty"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -95,7 +95,7 @@ EOF
 ##################################################################################
 
 resource "aws_iam_role" "ecr_images" {
-  name               = "codepipeline_assume_role_ecr_images"
+  name               = "codepipeline_assume_role_ecr_rasmarty"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
