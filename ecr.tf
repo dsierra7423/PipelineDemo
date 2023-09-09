@@ -79,7 +79,7 @@ resource "aws_ecr_repository_policy" "user-front" {
 }
 
 resource "aws_ecr_repository" "user-back" {
-    name = "user-back"
+    name = "subscription"
     force_delete = true
 }
 
